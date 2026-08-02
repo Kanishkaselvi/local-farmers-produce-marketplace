@@ -50,4 +50,25 @@ flowchart TB
 
 ## Project Status
 
+## ER Diagram
+
+```mermaid
+erDiagram
+
+    USER ||--o| FARMER_PROFILE : has
+    FARMER_PROFILE ||--o{ PRODUCT : sells
+    CATEGORY ||--o{ PRODUCT : contains
+
+    USER ||--o| CART : owns
+    CART ||--o{ CART_ITEM : contains
+    PRODUCT ||--o{ CART_ITEM : added_to
+
+    USER ||--o{ ORDER : places
+    ORDER ||--o{ ORDER_ITEM : contains
+    PRODUCT ||--o{ ORDER_ITEM : included_in
+
+    USER ||--o{ REVIEW : writes
+    PRODUCT ||--o{ REVIEW : receives
+```
+
 Currently under development as part of a 60-day Capstone Project.
